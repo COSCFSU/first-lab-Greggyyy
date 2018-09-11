@@ -6,6 +6,8 @@
 package Labs;
 
 import edu.frostburg.cosc310.lab00.Lab00;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -21,6 +23,7 @@ public class GregBarnettLab00 implements Lab00{
         GregBarnettLab00 lab = new GregBarnettLab00();
         System.out.println(lab.problem0(9999));
         System.out.println(lab.problem1(9999));
+        System.out.println(lab.problem2());
     }
 
     @Override
@@ -52,12 +55,19 @@ public class GregBarnettLab00 implements Lab00{
 
     @Override
     public long problem2() {
-        StringBuilder sb = new StringBuilder();
+        ArrayList<String> array = new ArrayList<>();
+        LinkedList<String> linked = new LinkedList<>();
         long start = System.currentTimeMillis();
-        
-        
+        for(int i = 0; i < 99999; i++){
+            array.add(Integer.toString(i));
+        }
         long end = System.currentTimeMillis();
+        System.out.println(end - start);
+        start = System.currentTimeMillis();
+        for(int i = 0; i < 99999; i++){
+            linked.add(Integer.toString(i));
+        }
+        end = System.currentTimeMillis();
         return end - start;
-    }
-    
+    }  
 }
